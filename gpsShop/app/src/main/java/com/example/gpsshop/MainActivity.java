@@ -1,5 +1,6 @@
 package com.example.gpsshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -13,6 +14,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,11 +24,22 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback/**, View.OnClickListener**/ {
 
     private GoogleMap googleMap;
 //    Button btn1;
+    private TextView memberName;
+    private List<UserAccount> accounts = new ArrayList<>();
+    private FirebaseDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +51,31 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 //        btn1 = findViewById(R.id.button2);
 //        btn1.setOnClickListener(this);
+
+        // 데이터 베이스에서 회원 정보 가져오기
+//        database = FirebaseDatabase.getInstance();
+//        database.getReference().addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                for (DataSnapshot snapshot1 : snapshot.getChildren()){
+//                    UserAccount account = snapshot.getValue(UserAccount.class);
+//                    memberName.setText(account.getEmailId());
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+
+        Intent intent =getIntent();
+        memberName = findViewById(R.id.member_name);
+        String member_id = intent.getStringExtra("member_Id");
+//        String member_name = intent.getStringExtra("member_Name");
+        memberName.setText(member_id + "님 환영합니다");
+
 
     }
 
@@ -84,21 +123,21 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                        googleMap.setMyLocationEnabled(true);
-                    }
-                } else {
-                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show();
-                }
-                return;
-            }
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+//        switch (requestCode) {
+//            case MY_PERMISSIONS_REQUEST_LOCATION: {
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//                        googleMap.setMyLocationEnabled(true);
+//                    }
+//                } else {
+//                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show();
+//                }
+//                return;
+//            }
+//        }
+//    }
 
 
 
