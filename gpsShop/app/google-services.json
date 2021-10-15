@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "57860345929",
-    "project_id": "adept-figure-312711",
-    "storage_bucket": "adept-figure-312711.appspot.com"
+    "project_number": "446970806115",
+    "project_id": "gpsproject-77989",
+    "storage_bucket": "gpsproject-77989.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:57860345929:android:f58c62935e1999cc5eef98",
+        "mobilesdk_app_id": "1:446970806115:android:3f6455a21f312b9e8a9d56",
         "android_client_info": {
           "package_name": "com.example.gpsshop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "57860345929-m0qe8uk14sd1mld535irro8k35i1g15t.apps.googleusercontent.com",
+          "client_id": "446970806115-36rdsrv3sj2ja0jadmir9itdce5pgnhi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gpsshop",
+            "certificate_hash": "e759eb4a9c039ecb7d0fbe875ab8d151b29b3d71"
+          }
+        },
+        {
+          "client_id": "446970806115-sebup9ql01fsjjso6fnu9mc1bv2dcp6k.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCud-adojuFPyRKJA9Kz0pMPoMbsYFmLR8"
+          "current_key": "AIzaSyBb5LeMuamycB91Mv_gva9_toIeen0e6T4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "57860345929-m0qe8uk14sd1mld535irro8k35i1g15t.apps.googleusercontent.com",
+              "client_id": "446970806115-sebup9ql01fsjjso6fnu9mc1bv2dcp6k.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
