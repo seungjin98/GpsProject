@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "333464303847",
+    "project_id": "gps-shop-328512",
+    "storage_bucket": "gps-shop-328512.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333464303847:android:6496bc65c6b5c92f19ca42",
+        "android_client_info": {
+          "package_name": "com.example.gpsshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333464303847-sn1ct64qj4hj35238o1a38c5m4dprok0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMrO2fCDwHwiWnilhqFIe9uGYq7xVf-SY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333464303847-sn1ct64qj4hj35238o1a38c5m4dprok0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

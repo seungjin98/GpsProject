@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "57860345929",
+    "project_id": "adept-figure-312711",
+    "storage_bucket": "adept-figure-312711.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57860345929:android:f58c62935e1999cc5eef98",
+        "android_client_info": {
+          "package_name": "com.example.gpsshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57860345929-m0qe8uk14sd1mld535irro8k35i1g15t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCud-adojuFPyRKJA9Kz0pMPoMbsYFmLR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57860345929-m0qe8uk14sd1mld535irro8k35i1g15t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
