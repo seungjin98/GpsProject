@@ -137,14 +137,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 drawerLayout.closeDrawers();
             }
         });
-        Button btn_open2 = (Button)findViewById(R.id.btn_open2);
-        btn_open2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                startActivity(intent);
-            }
-        });
 
         drawerLayout.setDrawerListener(listener);
         drawerView.setOnTouchListener(new View.OnTouchListener() {

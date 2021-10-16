@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +32,66 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        LinearLayout pastaLayout = (LinearLayout) findViewById(R.id.iv_profile);
+        LinearLayout nongbuLayout = (LinearLayout) findViewById(R.id.iv_profile2);
+        LinearLayout modulangLayout = (LinearLayout) findViewById(R.id.iv_profile3);
+        LinearLayout seowonLayout = (LinearLayout) findViewById(R.id.iv_profile4);
+        LinearLayout sunsaltteogbokkLayout = (LinearLayout) findViewById(R.id.iv_profile5);
+        LinearLayout tonkasuLayout = (LinearLayout) findViewById(R.id.iv_profile6);
+        LinearLayout hotdogLayout = (LinearLayout) findViewById(R.id.iv_profile7);
+
+        pastaLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, pasta1970.class);
+                startActivity(intent);
+            }
+        });
+
+        nongbuLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, nongbubossam.class);
+                startActivity(intent);
+            }
+        });
+        modulangLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, modulangbunsig.class);
+                startActivity(intent);
+            }
+        });
+        seowonLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, seowon.class);
+                startActivity(intent);
+            }
+        });
+        sunsaltteogbokkLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, sunsaltteogbokk.class);
+                startActivity(intent);
+            }
+        });
+        tonkasuLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, tonkasu.class);
+                startActivity(intent);
+            }
+        });
+        hotdogLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, hotdog.class);
+                startActivity(intent);
+            }
+        });
+
 
 //        recyclerView = findViewById(R.id.recyclerView);
 //        recyclerView.setHasFixedSize(true);

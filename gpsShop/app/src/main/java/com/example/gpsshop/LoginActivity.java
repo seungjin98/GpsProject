@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             intent.putExtra("member_Id",strEmail);
                             startActivity(intent);
-                            finish(); // 현재 액티비티 파괴
                         } else {
                             Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
                         }
