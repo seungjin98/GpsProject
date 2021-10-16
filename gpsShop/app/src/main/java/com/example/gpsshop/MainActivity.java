@@ -26,10 +26,13 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private FirebaseDatabase database;
     private DrawerLayout drawerLayout;
     private View drawerView;
+    private FirebaseAuth mFirebaseAuth;
 
 
     @Override
@@ -74,16 +78,49 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //            }
 //        });
 
+        // 회원 아이디 가져오기
         Intent intent =getIntent();
         memberName = findViewById(R.id.member_name);
         String member_id = intent.getStringExtra("member_Id");
-//        String member_name = intent.getStringExtra("member_Name");
-        memberName.setText(member_id + "님 환영합니다");
 
 
         // drawerLayout 부분
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawerView = (View)findViewById(R.id.drawer);
+
+        TextView loginName = (TextView)findViewById(R.id.loginName);
+        loginName.setText(member_id);
+
+        //로그아웃 하기
+        Button btn_logout = (Button)findViewById(R.id.btn_logout);
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mFirebaseAuth.signOut();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 지도로 이동
+        Button btn_maps = (Button)findViewById(R.id.btn_map);
+        btn_maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 점포 목록으로 이동
+        Button btn_shop = (Button)findViewById(R.id.btn_shop);
+        btn_shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button btn_open = (Button)findViewById(R.id.btn_open);
         btn_open.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +130,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        Button btn_colse = (Button)findViewById(R.id.btn_close);
-        btn_colse.setOnClickListener(new View.OnClickListener() {
+        Button btn_close = (Button)findViewById(R.id.btn_close);
+        btn_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.closeDrawers();
