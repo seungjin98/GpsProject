@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         btn_shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(MainActivity.this, tonkasu.class);
                 startActivity(intent);
             }
         });
@@ -135,15 +135,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
                 drawerLayout.closeDrawers();
-            }
-        });
-
-        Button btn = (Button) findViewById(R.id.btn_open2);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                startActivity(intent);
             }
         });
 
