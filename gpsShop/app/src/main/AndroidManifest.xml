@@ -15,6 +15,9 @@
         android:theme="@style/Theme.GpsShop">
         <activity android:name=".MainActivity2"></activity>
         <activity
+            android:name=".tonkasu"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
