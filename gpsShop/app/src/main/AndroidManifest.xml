@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GpsShop">
+        <activity android:name=".MainActivity2"></activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -30,7 +31,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCq6APkzEOKxtoFulvrD4BWOEd53_UfHdE" />
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
