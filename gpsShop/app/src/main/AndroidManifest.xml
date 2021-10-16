@@ -15,7 +15,7 @@
         android:theme="@style/Theme.GpsShop">
         <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,9 +30,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCq6APkzEOKxtoFulvrD4BWOEd53_UfHdE" />
 
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
