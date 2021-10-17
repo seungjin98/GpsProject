@@ -197,34 +197,34 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
         googleMap.addMarker(hotdogMarker);
 
-        LatLng modulang = new LatLng(37.58758575510095, 127.09725251204158);
+        LatLng modulang = new LatLng(37.5878356379744, 127.09659900771643);
         MarkerOptions modulangMarker = new MarkerOptions().position(modulang).title("모두랑분식");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
+        modulangMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
         googleMap.addMarker(modulangMarker);
 
-        LatLng nongbu = new LatLng(37.58758575510095, 127.09725251204158);
+        LatLng nongbu = new LatLng(37.586408079453356, 127.0949109095879);
         MarkerOptions nongbuMarker = new MarkerOptions().position(nongbu).title("농부보쌈");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.meaticon));
+        nongbuMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.meaticon));
         googleMap.addMarker(nongbuMarker);
 
         LatLng pasta1970 = new LatLng(37.58598060214817, 127.09511556519804);
         MarkerOptions pasta1970Marker = new MarkerOptions().position(pasta1970).title("1970pasta");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.nodle1icon));
+        pasta1970Marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.nodle1icon));
         googleMap.addMarker(pasta1970Marker);
 
         LatLng seowon = new LatLng(37.5906657688273, 127.09737925527702);
         MarkerOptions seowongMarker = new MarkerOptions().position(seowon).title("서원");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.noodleicon));
+        seowongMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.noodleicon));
         googleMap.addMarker(seowongMarker);
 
         LatLng sunsal = new LatLng(37.59042528195185, 127.09335338745953);
         MarkerOptions sunsalMarker = new MarkerOptions().position(sunsal).title("마단순살떡볶이");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
+        sunsalMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
         googleMap.addMarker(sunsalMarker);
 
         LatLng tonkasu = new LatLng(37.58814980781004, 127.0968265135842);
         MarkerOptions tonkasuMarker = new MarkerOptions().position(tonkasu).title("가나점보돈가스");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
+        tonkasuMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
         googleMap.addMarker(tonkasuMarker);
 
 
