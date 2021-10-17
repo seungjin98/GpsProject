@@ -11,6 +11,8 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -24,7 +26,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -37,7 +41,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback/**, View.OnClickListener**/ {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback{
 
     private GoogleMap googleMap;
 //    Button btn1;
@@ -147,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
 
+
     }
 
     DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {
@@ -187,6 +192,57 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("서일대학교");
         googleMap.addMarker(markerOptions);
 
+        LatLng hotdog = new LatLng(37.58758575510095, 127.09725251204158);
+        MarkerOptions hotdogMarker = new MarkerOptions().position(hotdog).title("스테프핫도그");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+        LatLng modulang = new LatLng(37.58758575510095, 127.09725251204158);
+        MarkerOptions modulangMarker = new MarkerOptions().position(modulang).title("모두랑분식");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+        LatLng nongbu = new LatLng(37.58758575510095, 127.09725251204158);
+        MarkerOptions nongbuMarker = new MarkerOptions().position(nongbu).title("농부보쌈");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+        LatLng pasta1970 = new LatLng(37.58598060214817, 127.09511556519804);
+        MarkerOptions pasta1970Marker = new MarkerOptions().position(pasta1970).title("1970pasta");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+        LatLng seowon = new LatLng(37.5906657688273, 127.09737925527702);
+        MarkerOptions seowongMarker = new MarkerOptions().position(seowon).title("서원");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+        LatLng sunsal = new LatLng(37.59042528195185, 127.09335338745953);
+        MarkerOptions sunsalMarker = new MarkerOptions().position(sunsal).title("마단순살떡볶이");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+        LatLng tonkasu = new LatLng(37.58814980781004, 127.0968265135842);
+        MarkerOptions tonkasuMarker = new MarkerOptions().position(tonkasu).title("가나점보돈가스");
+        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
+        googleMap.addMarker(hotdogMarker);
+
+
+
+        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(@NonNull Marker marker) {
+                Toast.makeText(MainActivity.this,"마커 눌렀습니다!!",Toast.LENGTH_SHORT);
+                return false;
+            }
+        });
+
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(@NonNull Marker marker) {
+                Toast.makeText(MainActivity.this,"설명 눌렀습니다!!",Toast.LENGTH_SHORT);
+            }
+        });
         if (ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             googleMap.setMyLocationEnabled(true);
         } else {
@@ -214,6 +270,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
     }
+
 
 //    @Override
 //    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
