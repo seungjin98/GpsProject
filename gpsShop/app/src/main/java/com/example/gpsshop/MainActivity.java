@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFirebaseAuth.signOut();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
@@ -186,8 +185,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         this.googleMap = googleMap;
 
         LatLng latLng = new LatLng(37.58682092450221, 127.09767932500326);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        googleMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
 
 
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("서일대학교");
