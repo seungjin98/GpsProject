@@ -189,60 +189,73 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng latLng = new LatLng(37.58682092450221, 127.09767932500326);
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         googleMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+
+
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("서일대학교");
         googleMap.addMarker(markerOptions);
 
         LatLng hotdog = new LatLng(37.58758575510095, 127.09725251204158);
-        MarkerOptions hotdogMarker = new MarkerOptions().position(hotdog).title("스테프핫도그");
-        hotdogMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon));
-        googleMap.addMarker(hotdogMarker);
+        Marker hotdogMarker1 = googleMap.addMarker(new MarkerOptions().position(hotdog).title("스테프핫도그").icon(BitmapDescriptorFactory.fromResource(R.drawable.hotdogicon)));
 
         LatLng modulang = new LatLng(37.5878356379744, 127.09659900771643);
-        MarkerOptions modulangMarker = new MarkerOptions().position(modulang).title("모두랑분식");
-        modulangMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
-        googleMap.addMarker(modulangMarker);
+        Marker modulangMarker =googleMap.addMarker(new MarkerOptions().position(modulang).title("모두랑분식").icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon)));
 
         LatLng nongbu = new LatLng(37.586408079453356, 127.0949109095879);
-        MarkerOptions nongbuMarker = new MarkerOptions().position(nongbu).title("농부보쌈");
-        nongbuMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.meaticon));
-        googleMap.addMarker(nongbuMarker);
+        Marker nongbuMarker =googleMap.addMarker(new MarkerOptions().position(nongbu).title("농부보쌈").icon(BitmapDescriptorFactory.fromResource(R.drawable.meaticon)));
 
         LatLng pasta1970 = new LatLng(37.58598060214817, 127.09511556519804);
-        MarkerOptions pasta1970Marker = new MarkerOptions().position(pasta1970).title("1970pasta");
-        pasta1970Marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.nodle1icon));
-        googleMap.addMarker(pasta1970Marker);
+        Marker pasta1970Marker =googleMap.addMarker(new MarkerOptions().position(pasta1970).title("1970pasta").icon(BitmapDescriptorFactory.fromResource(R.drawable.nodle1icon)));
 
         LatLng seowon = new LatLng(37.5906657688273, 127.09737925527702);
-        MarkerOptions seowongMarker = new MarkerOptions().position(seowon).title("서원");
-        seowongMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.noodleicon));
-        googleMap.addMarker(seowongMarker);
+        Marker seowongMarker =googleMap.addMarker(new MarkerOptions().position(seowon).title("서원").icon(BitmapDescriptorFactory.fromResource(R.drawable.noodleicon)));
 
         LatLng sunsal = new LatLng(37.59042528195185, 127.09335338745953);
-        MarkerOptions sunsalMarker = new MarkerOptions().position(sunsal).title("마단순살떡볶이");
-        sunsalMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
-        googleMap.addMarker(sunsalMarker);
+        Marker sunsalMarker =googleMap.addMarker(new MarkerOptions().position(sunsal).title("마단순살떡볶이").icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon)));
 
         LatLng tonkasu = new LatLng(37.58814980781004, 127.0968265135842);
-        MarkerOptions tonkasuMarker = new MarkerOptions().position(tonkasu).title("가나점보돈가스");
-        tonkasuMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon));
-        googleMap.addMarker(tonkasuMarker);
+        Marker tonkasuMarker =googleMap.addMarker(new MarkerOptions().position(tonkasu).title("가나점보돈가스").icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon)));
 
-
-
-        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(@NonNull Marker marker) {
-                Toast.makeText(MainActivity.this,"마커 눌렀습니다!!",Toast.LENGTH_SHORT);
-                return false;
-            }
-        });
+//        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+//            @Override
+//            public boolean onMarkerClick(@NonNull Marker marker) {
+//                if(marker.equals(hotdogMarker1)){
+//                    Toast.makeText(MainActivity.this,"마커 눌렀습니다!!",Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(MainActivity.this, hotdog.class);
+//                    startActivity(intent);
+//                }
+//
+//                return true;
+//            }
+//        });
 
         googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(@NonNull Marker marker) {
-                Toast.makeText(MainActivity.this,"설명 눌렀습니다!!",Toast.LENGTH_SHORT);
+                if(marker.equals(hotdogMarker1)) {
+                    Intent intent = new Intent(MainActivity.this, hotdog.class);
+                    startActivity(intent);
+                } else if(marker.equals(modulangMarker)) {
+                    Intent intent = new Intent(MainActivity.this, modulangbunsig.class);
+                    startActivity(intent);
+                }else if(marker.equals(nongbuMarker)) {
+                    Intent intent = new Intent(MainActivity.this, nongbubossam.class);
+                    startActivity(intent);
+                }else if(marker.equals(pasta1970Marker)) {
+                    Intent intent = new Intent(MainActivity.this, pasta1970.class);
+                    startActivity(intent);
+                }else if(marker.equals(seowongMarker)) {
+                    Intent intent = new Intent(MainActivity.this, seowon.class);
+                    startActivity(intent);
+                }else if(marker.equals(sunsalMarker)) {
+                    Intent intent = new Intent(MainActivity.this, sunsaltteogbokk.class);
+                    startActivity(intent);
+                }else if(marker.equals(tonkasuMarker)) {
+                    Intent intent = new Intent(MainActivity.this, tonkasu.class);
+                    startActivity(intent);
+                }
             }
         });
+
         if (ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             googleMap.setMyLocationEnabled(true);
         } else {
