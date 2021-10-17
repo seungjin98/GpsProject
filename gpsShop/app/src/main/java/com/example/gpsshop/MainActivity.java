@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // 회원 아이디 가져오기
         Intent intent =getIntent();
-        memberName = findViewById(R.id.member_name);
         String member_id = intent.getStringExtra("member_Id");
 
 
@@ -215,18 +214,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng tonkasu = new LatLng(37.58814980781004, 127.0968265135842);
         Marker tonkasuMarker =googleMap.addMarker(new MarkerOptions().position(tonkasu).title("가나점보돈가스").icon(BitmapDescriptorFactory.fromResource(R.drawable.bunsigicon)));
 
-//        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-//            @Override
-//            public boolean onMarkerClick(@NonNull Marker marker) {
-//                if(marker.equals(hotdogMarker1)){
-//                    Toast.makeText(MainActivity.this,"마커 눌렀습니다!!",Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(MainActivity.this, hotdog.class);
-//                    startActivity(intent);
-//                }
-//
-//                return true;
-//            }
-//        });
+        LatLng bolibab = new LatLng(37.58923871233086, 127.09644379938139);
+        Marker bolibabMarker =googleMap.addMarker(new MarkerOptions().position(bolibab).title("시골 보리밥").icon(BitmapDescriptorFactory.fromResource(R.drawable.riceicon)));
+
+        LatLng sundeagug = new LatLng(37.59000004088219, 127.09160498100121);
+        Marker sundeagugMarker =googleMap.addMarker(new MarkerOptions().position(sundeagug).title("소문난 순대국").icon(BitmapDescriptorFactory.fromResource(R.drawable.riceicon)));
+
+        LatLng gobkkaebi = new LatLng(37.58998179649499, 127.0952900422118);
+        Marker gobkkaebiMarker =googleMap.addMarker(new MarkerOptions().position(gobkkaebi).title("곱깨비").icon(BitmapDescriptorFactory.fromResource(R.drawable.meaticon)));
 
         googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
@@ -251,6 +246,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     startActivity(intent);
                 }else if(marker.equals(tonkasuMarker)) {
                     Intent intent = new Intent(MainActivity.this, tonkasu.class);
+                    startActivity(intent);
+                }else if(marker.equals(bolibabMarker)) {
+                    Intent intent = new Intent(MainActivity.this, bolibab.class);
+                    startActivity(intent);
+                }else if(marker.equals(sundeagugMarker)) {
+                    Intent intent = new Intent(MainActivity.this, sundaegug.class);
+                    startActivity(intent);
+                }else if(marker.equals(gobkkaebiMarker)) {
+                    Intent intent = new Intent(MainActivity.this, gobkkaebi.class);
                     startActivity(intent);
                 }
             }

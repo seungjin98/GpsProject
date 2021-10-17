@@ -40,6 +40,9 @@ public class MainActivity2 extends AppCompatActivity {
         LinearLayout sunsaltteogbokkLayout = (LinearLayout) findViewById(R.id.iv_profile5);
         LinearLayout tonkasuLayout = (LinearLayout) findViewById(R.id.iv_profile6);
         LinearLayout hotdogLayout = (LinearLayout) findViewById(R.id.iv_profile7);
+        LinearLayout bolibabLayout = (LinearLayout) findViewById(R.id.iv_profile8);
+        LinearLayout sundeagugLayout = (LinearLayout) findViewById(R.id.iv_profile9);
+        LinearLayout gobkkaebiLayout = (LinearLayout) findViewById(R.id.iv_profile10);
 
         pastaLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +94,28 @@ public class MainActivity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        bolibabLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, bolibab.class);
+                startActivity(intent);
+            }
+        });
+        sundeagugLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, sundaegug.class);
+                startActivity(intent);
+            }
+        });
+        gobkkaebiLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, gobkkaebi.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 //        recyclerView = findViewById(R.id.recyclerView);

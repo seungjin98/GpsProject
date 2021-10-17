@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GpsShop">
         <activity
+            android:name=".bolibab"
+            android:exported="true" />
+        <activity
+            android:name=".sundaegug"
+            android:exported="true" />
+        <activity
+            android:name=".gobkkaebi"
+            android:exported="true" />
+        <activity
             android:name=".nongbubossam"
             android:exported="true" />
         <activity
